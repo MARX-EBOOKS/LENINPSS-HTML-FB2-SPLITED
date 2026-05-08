@@ -23,7 +23,7 @@ class ConfigLoader {
       copyOnly: ['en/archive/', 'en/history/', 'docs/VIL/', 'docs/MEW/', 'ru/VIL-UAIO/'],
       template: './template.js', mitt: '', mps: ''
     };
-
+    const boolFlags = new Set(['--noindex']);
     const flagMap = {
       '--input': 'input', '-i': 'input', '--output': 'output', '-o': 'output',
       '--config': 'config', '-c': 'config', '--template': 'template', '-t': 'template',
@@ -702,7 +702,7 @@ class BuildEngine {
     }
     await Promise.all(executing);
     process.stdout.write(`\rProgress: rendered ${rendered} | copied ${copied}   \n`);
-    if (!this.config.args.includes('--noindex')) await fs.writeFile(path.join(DIST, 'index.html'), renderer.generateCardIndex(rawConfig));
+    if (!this.config.args.notgenIndex) await fs.writeFile(path.join(DIST, 'index.html'), renderer.generateCardIndex(rawConfig));
 
     console.log(`\nDone: ${rendered} pages rendered | ${copied} assets copied | vol indexes ${volIndexCount} | ${((Date.now() - start) / 1000).toFixed(1)}s`);
   }
