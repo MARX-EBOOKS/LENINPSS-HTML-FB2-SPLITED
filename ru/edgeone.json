@@ -40,5 +40,11 @@
         "destination": "https://ml.491007.xyz/:splat",
         "statusCode": 302
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/:splat",
+        "destination": "/"
+      }
     ]
 }
