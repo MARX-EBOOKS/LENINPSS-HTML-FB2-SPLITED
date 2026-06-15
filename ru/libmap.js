@@ -586,7 +586,7 @@ window.LIBRARY_CONFIG = [
     title: "Github仓库",
     desc: "Github仓库地址",
     basePath: null,
-    path: "https://github.com/MARX-ZH-CN/marx-zh-cn.github.io"
+    path: "https://github.com/MARX-ZH-CN/LENINPSS-HTML-FB2-SPLITED"
   },
   {
     id: "link",
